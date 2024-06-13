@@ -27,6 +27,7 @@ if config.Enabled then
 			{
 				RequiredMetaUpgradesMin = 1,
 			},
+			AutoEquipText = "TradeOff_AutoEquip",
 		})				
 		
 		OverwriteTableKeys(MetaUpgradeCardData.TradeOff, {
@@ -42,7 +43,7 @@ if config.Enabled then
 			{
 				RequiredMetaUpgradesMin = 1,
 			},
-			AutoEquipAutoEquipText = "TradeOff_AutoEquip",
+			AutoEquipText = "TradeOff_AutoEquip",
 		})		
 
 		sjson.hook(textfile, function(sjsonData)
