@@ -1,6 +1,6 @@
 # Mod name
 
-Hades II mod allowing to do some super duper thing.
+Hades II mod allowing tohing.
 
 ## Features
 
@@ -10,6 +10,4 @@ Hades II mod allowing to do some super duper thing.
 
 ## Install
 
-- Do this.
-- Do that.
-  - Nope, not that.
+P
