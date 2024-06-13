@@ -9,15 +9,69 @@
 
 local file = rom.path.combine(rom.paths.Content, 'Game/Text/en/ShellText.en.sjson')
 
-sjson.hook(file, function(data)
-	return sjson_ShellText(data)
-end)
 
 modutil.mod.Path.Wrap("SetupMap", function(base, ...)
 	prefix_SetupMap()
 	return base(...)
 end)
 
+if config.Enabled then
+
+	local textfile = rom.path.combine(rom.paths.Content, 'Game/Text/en/TraitText.en.sjson')
+
+	if config.FreeArcanas then
+
+		OverwriteTableKeys(MetaUpgradeCardData.DoorReroll, {
+			Cost = 0,
+			AutoEquipRequirements = 
+			{
+				RequiredMetaUpgradesMin = 1,
+			},
+		})				
+		
+		OverwriteTableKeys(MetaUpgradeCardData.TradeOff, {
+			AutoEquipRequirements = 
+			{
+				RequiredMetaUpgradesMin = 1,
+			},
+		})		
+		
+		OverwriteTableKeys(MetaUpgradeCardData.ScreenReroll, {
+			Cost = 0,			
+			AutoEquipRequirements = 
+			{
+				RequiredMetaUpgradesMin = 1,
+			},
+			AutoEquipAutoEquipText = "TradeOff_AutoEquip",
+		})		
+
+		sjson.hook(textfile, function(sjsonData)
+			for _, v in ipairs(sjsonData.Texts) do
+				if v.Id == "TradeOff_AutoEquip" then
+					v.DisplayName = "{$Keywords.AutoEquip}: {#ItalicLightFormat}Activate any other card.{#Prev}."
+				end
+			end
+		end)
+		
+	end
+
+	if config.MoreRerolls then
+
+		OverwriteTableKeys(TraitData.DoorRerollMetaUpgrade, {
+			RerollCount = { BaseValue = config.RerollCount }
+		})	
+
+		OverwriteTableKeys(TraitData.RerollTradeOffMetaUpgrade, {
+			RerollCount = { BaseValue = config.RerollCount }
+		})
+
+		OverwriteTableKeys(TraitData.PanelRerollMetaUpgrade, {
+			RerollCount = { BaseValue = config.RerollCount }
+		})
+	end
+end
+
 game.OnControlPressed({'Gift', function()
 	return trigger_Gift()
 end})
+

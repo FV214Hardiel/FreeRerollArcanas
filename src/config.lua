@@ -1,5 +1,6 @@
-return {
-  version = 0;
-  enabled = true;
-  message = 'Hello World!';
+local config = {
+  Enabled = true,
+  FreeArcanas = true,
+  MoreRerolls = true,
+  RerollCount = 12,
 }
