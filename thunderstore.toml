@@ -3,7 +3,7 @@ schemaVersion = "0.0.1"
 
 
 [package]
-namespace = "FV214Hardiel"
+namespace = "Hardiel"
 name = "FreeRerollArcanas"
 versionNumber = "0.1.2"
 description = "Makes your reroll arcanas be free with grasp and give you A LOT of rerolls"
