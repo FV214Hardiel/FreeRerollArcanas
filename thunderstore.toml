@@ -3,11 +3,11 @@ schemaVersion = "0.0.1"
 
 
 [package]
-namespace = "AuthorName"
-name = "ModName"
+namespace = "FV214Hardiel"
+name = "Free_Reroll_Arcanas"
 versionNumber = "0.0.0"
-description = "Allows to do some super duper thing."
-websiteUrl = "https://github.com/AuthorName/ModName"
+description = "Makes your reroll arcanas be free with grasp and give you A LOT of rerolls"
+websiteUrl = "https://github.com/FV214Hardiel"
 containsNsfwContent = false
 
 [package.dependencies]
@@ -42,4 +42,4 @@ repository = "https://thunderstore.io"
 communities = [ "hades-ii", ]
 
 [publish.categories]
-hades-ii = [ "mods", ]
+hades-ii = [ "mods", "misc"]
