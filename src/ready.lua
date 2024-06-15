@@ -58,21 +58,27 @@ if config.Enabled then
 
 	if config.MoreRerolls then
 
+		local rerollsAmount = config.RerollCount
+		
+
 		OverwriteTableKeys(TraitData.DoorRerollMetaUpgrade, {
-			RerollCount = { BaseValue = config.RerollCount }
+			RerollCount = { BaseValue = rerollsAmount }
 		})	
-
-		OverwriteTableKeys(TraitData.RerollTradeOffMetaUpgrade, {
-			RerollCount = { BaseValue = config.RerollCount }
-		})
-
 		OverwriteTableKeys(TraitData.PanelRerollMetaUpgrade, {
-			RerollCount = { BaseValue = config.RerollCount }
+			RerollCount = { BaseValue = rerollsAmount }
 		})
+
+		if rerollsAmount % 2 == 1 then
+			rerollsAmount = rerollsAmount + 1
+			
+		end
+		OverwriteTableKeys(TraitData.RerollTradeOffMetaUpgrade, {
+			
+			RerollCount = { BaseValue = rerollsAmount }
+		})
+
+		
 	end
 end
 
-game.OnControlPressed({'Gift', function()
-	return trigger_Gift()
-end})
 

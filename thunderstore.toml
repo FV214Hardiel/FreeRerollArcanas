@@ -5,7 +5,7 @@ schemaVersion = "0.0.1"
 [package]
 namespace = "Hardiel"
 name = "FreeRerollArcanas"
-versionNumber = "0.1.2"
+versionNumber = "0.1.3"
 description = "Makes your reroll arcanas be free with grasp and give you A LOT of rerolls"
 websiteUrl = "https://github.com/FV214Hardiel"
 containsNsfwContent = false
